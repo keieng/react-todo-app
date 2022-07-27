@@ -1,19 +1,10 @@
-import { TodoItem } from "./TodoItem";
-export const TodoList = ({
-  todoList,
-  toggleTodoListItemStatus,
-  deleteTodoListItem,
-}) => {
+import React, { memo } from "react";
+import { Heading } from "@chakra-ui/react";
+
+export const TodoTitle = memo(({ title, as, fontSize, mt }) => {
   return (
-    <ul>
-      {todoList.map((todo) => (
-        <TodoItem
-          todo={todo}
-          key={todo.id}
-          toggleTodoListItemStatus={toggleTodoListItemStatus}
-          deleteTodoListItem={deleteTodoListItem}
-        />
-      ))}
-    </ul>
+    <Heading mt={mt} as={as} fontSize={fontSize} w="full">
+      {title}
+    </Heading>
   );
-};
+});
